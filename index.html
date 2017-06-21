@@ -12,11 +12,59 @@
 		<!-- CSS読み込み -->
 		<link href="css/common.css">
 		<link href="css/index.css">
-
 	</head>
 
 	<body>
 
+
+		<div class="container">
+
+			<div id="title">
+				<h1>顔診断アプリ</h1>
+				<p>人工知能があなたの顔の成分を分析します！</p>
+			</div>
+
+			<div id="inputform">
+				<form>
+					<label>
+						<p>画像を選択</p>
+						<input type="file">
+					</label>
+					<label>
+						<p>名前を入力（最大20文字）</p>
+						<input type="text" name="name" maxlength="20" placeholder="徳川 家康">
+					</label>
+					<button type="submit" value="start" onclick="return picsend();">はじめる</button></p>
+				</form>
+
+				<div id="caution">
+					<p>※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約</p>
+					<p>※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー</p>
+				</div>
+			</div>
+
+			<div id="review">
+			<h2>あの、有名人も分析！</h2>
+				<div class="row">
+					<div class="col-xs-6">
+						<img src="img/yoshinobu.png" width="150px">
+						<p>徳川 慶喜さん</p>
+					</div>
+					<div class="col-xs-6">
+					<p>グラフがここに入ります</p>
+					</div>
+				</div>
+				<div class="row">
+					<p>"自分の顔が塩顔成分と分かり、スッキリしました！"</p>
+				</div>
+			</div>
+
+			<div id="start">
+				<h2>さあ、あなたも始めよう！</h2>
+				<p id="pageTop"><a href="#">トップへ戻る</a></p>
+			</div>
+
+		</div>
 
 		<!-- jquery読み込み -->
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
