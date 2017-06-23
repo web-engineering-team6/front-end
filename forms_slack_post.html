@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+  <script type="text/javascript" language="javascript">
+        function onButtonClick() {
+          target1 = document.getElementById("output1");
+          target2 = document.getElementById("output2");
+          target3 = document.getElementById("output3");
+          target1.innerText = document.forms.id_form1.id_textBox1.value;
+          target2.innerText = document.forms.id_form2.id_textBox2.value;
+          target3.innerText = document.forms.id_form3.id_textBox3.value;
+          // target.innerText = document.id_form1.id_textBox1.value;//これでもOK
+        }
+  </script>
+</head>
+
+<body>
+
+  <form name="form1" id="id_form1" action="">
+    <input name="textBox1" id="id_textBox1" type="text" value="" />
+    <input type="button" value="Name Confirm" onclick="onButtonClick();" />
+  </form>
+  <hr/>
+  <div id="output1"></div>
+
+  <form name="form2" id="id_form2" action="">
+    <input name="textBox2" id="id_textBox2" type="text" value="" />
+    <input type="button" value="Email Confirm" onclick="onButtonClick();" />
+  </form>
+  <hr/>
+  <div id="output2"></div>
+
+  </form>
+  <form name="form3" id="id_form3" action="">
+    <input name="textBox3" id="id_textBox3" type="text" value="" />
+    <input type="button" value="Message Confirm" onclick="onButtonClick();" />
+  </form>
+  <hr/>
+  <div id="output3"></div>
+
+  <hr/>
+  <div id="output"></div>
+</body>
+
+      <a href="#" class="slack-submit">Post to Slack!</a>
+      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="forms_slack_post.js"></script>
+
+</html>
