@@ -1,1 +1,15 @@
 /* index.htmlのCSSはココ */
+input:focus,textarea:focus{
+  outline:none;
+}
+
+input:focus:invalid,
+textarea:focus:invalid{
+    border:solid 2px red;
+}
+
+input:focus:valid,
+textarea:focus:valid{
+    border:solid 1px grey;
+    
+}
