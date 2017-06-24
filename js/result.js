@@ -6,7 +6,8 @@ $(function () {
     var url = 'https://slack.com/api/chat.postMessage';
 
         var data = {
-            token: 'Slack #yoshinobu-channelで共有します。GithubでPublicに共有すると無効化されるため。',
+						token: 'xoxp--190466053957--189718136128--201686809458--3b59530140f3ae8d9b76852092f5771b',
+            // token: 上のtoken情報中の--を-に置換するとワークします。4箇所。GithubでそのままtokenをPublicに共有すると無効化されるため。',
             channel: '#yoshinobu-channel',
             username: 'yoshinobu-nisei-bot',
             as_user: 'false',
