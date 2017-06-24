@@ -31,12 +31,11 @@
 						<input type="file">
 					</label>
 					<label>
-						<p>名前を入力（最大20文字）</p>
-						<input type="text" name="name" maxlength="20" placeholder="徳川 家康">
-					</label>
-					<button type="submit" value="start" onclick="return picsend();">はじめる</button>
-				</form>
-
+						<p>名前を入力（漢字、全角カナ、全角かな、半角英数字を最大8文字まで）</p>					    
+						<input type="text" name="name" maxlength="8" placeholder="名前" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="漢字、全角カナ、全角かな、半角英数字のいずれか８文字を入力して下さい。" />
+         　　　　　　　　　　　　　　　　　　 </label>
+					<button type="submit" value="start" onclick="return picsend();">START</button>
+　　　　　　　　　　　　　　　　　　　</form>
 				<div id="caution">
 					<p>※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約</p>
 					<p>※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー</p>
