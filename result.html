@@ -13,25 +13,11 @@
 		<link href="css/common.css">
 		<link href="css/result.css">
 
-	</head>
-
 <!-- FormのtextBoxへの記入がConfirmされたものをSlackへPost -->
 
-	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	    <title></title>
 
-	  <script type="text/javascript" language="javascript">
-	        function onButtonClick() {
-	          target1 = document.getElementById("output1");
-	          target2 = document.getElementById("output2");
-	          target3 = document.getElementById("output3");
-	          target1.innerText = document.forms.id_form1.id_textBox1.value;
-	          target2.innerText = document.forms.id_form2.id_textBox2.value;
-	          target3.innerText = document.forms.id_form3.id_textBox3.value;
-	          // target.innerText = document.id_form1.id_textBox1.value;//これでもOK
-	        }
-	  </script>
 	</head>
 
 	<body>
@@ -121,6 +107,9 @@
 		<!-- js読み込み -->
 		<script src="js/common.js"></script>
 		<script src="js/result.js"></script>
+		token.jsをSlack上でやり取り
+		<!-- Slackのtokenをグローバル変数に含むtoken.jsを作成、読み込み。token.jsはSlackで共有 -->
+		<script src="js/token.js"></script>
 
 	</body>
 </html>
