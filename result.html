@@ -12,11 +12,8 @@
 		<!-- CSS読み込み -->
 		<link href="css/common.css" rel="stylesheet">
 		<link href="css/result.css" rel="stylesheet">
-
 	</head>
-
 	<body>
-
 		<div class="container">
 
 			<div id="result">
@@ -34,14 +31,13 @@
 
 			<div align="center" id="tweet">
 				<span id="tweet">結果をツイートする</span><br>
-                                 <script src="js/common.js"></script>
-				<script src="js/result.js"></script>
+
 				<a href="https://twitter.com/share" class="twitter-share-button"
-				   data-text="塩顔？しょうゆ顔？ソース顔？顔診断サイト！"
+				   data-text="塩顔？しょうゆ顔？ソース顔？顔診断サイト！http://test.jp"
 				   data-lang="ja" 
 				   data-size="large" 
 				   data-hashtags="人工知能,顔認識">ツイート</a> 
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 			</div>
 			
 			<div align="center" id="try-again">
@@ -54,40 +50,44 @@
 
         
 				<p class="caption">下記の項目を入力して「美容整形カウンセリング」ボタンをクリックしてください。<br>送信後に美容整形病院より改めてご連絡させていただきます。</p>
+
 				<form id="ad-face">
 					<label>
 						<p>お名前</p>
-						<input type="text" name="name" maxlength="8" placeholder="塩顔　太郎" pattern="^([\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096]{1,}　[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096]{1,})$" 　title="お名前を漢字、全角カナ、全角かなで入力して下さい。" />
+						<input id="name" type="text" name="name" maxlength="8" placeholder="塩顔　太郎" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="お名前を漢字、全角カナ、全角かなで入力して下さい。" />
 					</label><br>
                                                             
 					<label>
 						<p>ふりがな</p>
-						<input type="text" name="name" maxlength="8" placeholder="しおがお　たろう" pattern="([\u3041-\u3096]{1,}　[\u3041-\u3096]{1,})$" 　title="お名前を全角かなで入力して下さい。"/>
+						<input id="furigana" type="text" name="name" maxlength="8" placeholder="しおがお　たろう" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="お名前を全角ひらがなで入力して下さい。"/>
 					</label><br>
+
 					<label>
 						<p>性別</p>
-						<input type="radio" name="sex" value="male" id="otoko">
-						<label for="otoko" accesskey="m">男</label>
-						<input type="radio" name="sex" value="female" id="onna">
-						<label for="onna" accesskey="f">女</label><br>
+						<input type="radio" name="sex" value="male">
+						男
+						<input type="radio" name="sex" value="female">
+						女<br>
+					</label><br>
+
 					<label>
 						<p>携帯番号</p>
-						<input type="tel" name="tel" style="ime-inactive" placeholder="xxx-xxxx-xxxx" pattern="^([0-9]{3}-[0-9]{4}-[0-9]{4})$" maxlength="13" title="携帯番号をハイフンで区切って入力してください">
+						<input id="tel" type="tel" name="tel" placeholder="xxx-xxxx-xxxx" pattern="^([0-9]{3}-[0-9]{4}-[0-9]{4})$" maxlength="13" title="携帯番号をハイフンで区切って入力してください">
 					</label><br>
+
 					<label>
 						<p>メールアドレス</p>
-						<input type="email" name="email" style="ime-inactive" pattern="^([a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,})$" placeholder="xxxxxx@xxx.com">
+						<input id="mail" type="email" name="email" pattern="^([a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,})$" placeholder="xxxxxx@xxx.com">
 					</label><br>
+
 					<label>
 						<p>相談内容</p>
-						<input type="text" name="text" size="23" style="height:50px">
+						<input id="text" type="text" name="text" size="23" style="height:50px">
 					</label><br>
-  　　　
-        　　　　　　　　　　　　　　　　　　　<button type="submit" value="start" onclick="return slacksend();">整形カウンセリングを申し込む</button>
-       　　　　　　　　　　　　　　　　　　　 <button type="reset" value="reset">リセット</button>
-				</form>
-			</
 
+					<a href="#" class="slack-submit">整形カウンセリングを申し込む</a>
+				</form>
+			</div>
 
 		</div>
 
@@ -99,6 +99,9 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 		<!-- js読み込み -->
-	
+		<script src="js/token.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/result.js"></script>
+
 	</body>
 </html>
