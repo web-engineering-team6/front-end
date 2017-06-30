@@ -10,64 +10,11 @@
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
 		<!-- CSS読み込み -->
-		<link href="css/common.css">
-		<link href="css/result.css">
-
-	</head>
-
-<!-- FormのtextBoxへの記入がConfirmされたものをSlackへPost -->
-
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	    <title></title>
-
-	  <script type="text/javascript" language="javascript">
-	        function onButtonClick() {
-	          target1 = document.getElementById("output1");
-	          target2 = document.getElementById("output2");
-	          target3 = document.getElementById("output3");
-	          target1.innerText = document.forms.id_form1.id_textBox1.value;
-	          target2.innerText = document.forms.id_form2.id_textBox2.value;
-	          target3.innerText = document.forms.id_form3.id_textBox3.value;
-	          // target.innerText = document.id_form1.id_textBox1.value;//これでもOK
-	        }
-	  </script>
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/result.css" rel="stylesheet">
 	</head>
 
 	<body>
-
-	  <form name="form1" id="id_form1" action="">
-	    <input name="textBox1" id="id_textBox1" type="text" value="" />
-	    <input type="button" value="Name Confirm" onclick="onButtonClick();" />
-	  </form>
-	  <hr/>
-	  <div id="output1"></div>
-
-	  <form name="form2" id="id_form2" action="">
-	    <input name="textBox2" id="id_textBox2" type="text" value="" />
-	    <input type="button" value="Email Confirm" onclick="onButtonClick();" />
-	  </form>
-	  <hr/>
-	  <div id="output2"></div>
-
-	  </form>
-	  <form name="form3" id="id_form3" action="">
-	    <input name="textBox3" id="id_textBox3" type="text" value="" />
-	    <input type="button" value="Message Confirm" onclick="onButtonClick();" />
-	  </form>
-	  <hr/>
-	  <div id="output3"></div>
-
-	  <hr/>
-	  <div id="output"></div>
-	</body>
-
-	      <a href="#" class="slack-submit">Post to Slack!</a>
-	      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	      <script src="js/result.js"></script>
-
-	<body>
-
 		<div class="container">
 
 			<div id="result">
@@ -83,30 +30,64 @@
 				</div>
 			</div>
 
-			<div id="tweet">
-				<span id="tweet" onclick="return tweet()">結果をツイートする</span>
+			<div align="center" id="tweet">
+				<span id="tweet">結果をツイートする</span><br>
+
+				<a href="https://twitter.com/share" class="twitter-share-button"
+				   data-text="塩顔？しょうゆ顔？ソース顔？顔診断サイト！http://test.jp"
+				   data-lang="ja" 
+				   data-size="large" 
+				   data-hashtags="人工知能,顔認識">ツイート</a> 
+
+			</div>
+			
+			<div align="center" id="try-again">
+				<a href="index.html">もう一回やってみる</a>
 			</div>
 
-			<div id="ad">
-				<h2>理想の顔にちかづきたかったら...</h2>
-				<p>あなたにおすすめの整形外科を紹介します！</p>
+			<div align="left" id="ad">
+				<h2>あなたにとって理想な顔は...?</h2>
+				<p>人工知能技術と美容整形病院のコラボで<br>理想な顔になっていただけます！</p>
+
+        
+				<p class="caption">下記の項目を入力して「美容整形カウンセリング」ボタンをクリックしてください。<br>送信後に美容整形病院より改めてご連絡させていただきます。</p>
 
 				<form id="ad-face">
 					<label>
-						<p>メールアドレスを入力</p>
-						<input type="email" name="email" placeholder="tokugawa-i@edo-bakufu.jp">
-					</label>
+						<p>お名前</p>
+						<input id="name" type="text" name="name" maxlength="8" placeholder="塩顔　太郎" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="お名前を漢字、全角カナ、全角かなで入力して下さい。" />
+					</label><br>
+                                                            
 					<label>
-						<p>電話番号を入力</p>
-						<input type="tel" name="tel" placeholder="119-2296-1090">
-					</label>
+						<p>ふりがな</p>
+						<input id="furigana" type="text" name="name" maxlength="8" placeholder="しおがお　たろう" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="お名前を全角ひらがなで入力して下さい。"/>
+					</label><br>
 
-					<button type="submit" value="start" onclick="return slacksend();">整形カウンセリングを申し込む</button>
+					<label>
+						<p>性別</p>
+						<input type="radio" name="sex" value="male">
+						男
+						<input type="radio" name="sex" value="female">
+						女<br>
+					</label><br>
+
+					<label>
+						<p>携帯番号</p>
+						<input id="tel" type="tel" name="tel" placeholder="xxx-xxxx-xxxx" pattern="^([0-9]{3}-[0-9]{4}-[0-9]{4})$" maxlength="13" title="携帯番号をハイフンで区切って入力してください">
+					</label><br>
+
+					<label>
+						<p>メールアドレス</p>
+						<input id="mail" type="email" name="email" pattern="^([a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,})$" placeholder="xxxxxx@xxx.com">
+					</label><br>
+
+					<label>
+						<p>相談内容</p>
+						<input id="text" type="text" name="text" size="23" style="height:50px">
+					</label><br>
+
+					<a href="#" class="slack-submit">整形カウンセリングを申し込む</a>
 				</form>
-			</div>
-
-			<div id="try-again">
-				<a href="index.html">もう一回やってみる</a>
 			</div>
 
 		</div>
@@ -119,8 +100,8 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 		<!-- js読み込み -->
+		<script src="js/token.js"></script>
 		<script src="js/common.js"></script>
 		<script src="js/result.js"></script>
-
 	</body>
 </html>

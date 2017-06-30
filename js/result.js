@@ -1,44 +1,39 @@
 /* result.htmlのjsはココ */
 
-// 申込FormのtextBoxへの記入がConfirmされたものをSlackへPost
+//ツイート送信
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+//データSlack送信
 $(function () {
     $('.slack-submit').on('click', function () {
     var url = 'https://slack.com/api/chat.postMessage';
 
+    var name = $("#name").val()
+    var furigana = $("#furigana").val()
+    var sex = $("[name=sex]:checked").val()
+    var tel = $("#tel").val()
+    var mail = $("#mail").val()
+    var text = $("#text").val()
+
+    if(name == ""||furigana == ""||sex == ""||tel == ""||mail == ""){
+        alert('一部の項目が入力されていません。');
+　　 }else{
+
         var data = {
-						token: 'xoxp--190466053957--189718136128--201686809458--3b59530140f3ae8d9b76852092f5771b',
-            // token: 上のtoken情報中の--を-に置換するとワークします。4箇所。GithubでそのままtokenをPublicに共有すると無効化されるため。',
+            token: token_info,
             channel: '#yoshinobu-channel',
             username: 'yoshinobu-nisei-bot',
             as_user: 'false',
             icon_url: 'http://lorempixel.com/48/48',
-            text: 'Name: '+target1.innerText+'\n'+'Email: '+target2.innerText+'\n'+'Message: '+target3.innerText
+            text: 'Name: '+name+'\n'+'furigana: '+furigana+'\n'+'sex: '+sex+'\n'+'tel: '+tel+'\n'+'mail: '+mail+'\n'+'text: '+text
         };
 
         $.ajax({
             type: 'GET',
             url: url,
             data: data,
-            success: function (data) {
-                alert( 'Can I post to Slack? :' + data.ok );
-            }
         });
+    }
     });
 });
 
-//ツイート送信
-function tweet(){
-	//ツイートを送る処理を書きます
-	//console.log("test-tweet");
-
-	return false;
-};
-
-
-//データSlack送信
-function slacksend(){
-	//Slackを送る処理を書きます
-	//console.log("test-slack");
-
-	return false;
-};
