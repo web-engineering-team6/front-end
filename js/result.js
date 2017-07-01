@@ -37,3 +37,51 @@ $(function () {
     });
 });
 
+//URLクエリパラメータをJSONに変換
+var QueryString = {  
+  parse: function(text, sep, eq, isDecode) {
+    text = text || location.search.substr(1);
+    sep = sep || '&';
+    eq = eq || '=';
+    var decode = (isDecode) ? decodeURIComponent : function(a) { return a; };
+    return text.split(sep).reduce(function(obj, v) {
+      var pair = v.split(eq);
+      obj[pair[0]] = Number(decode(pair[1]));
+      return obj;
+    }, {});
+  },
+  stringify: function(value, sep, eq, isEncode) {
+    sep = sep || '&';
+    eq = eq || '=';
+    var encode = (isEncode) ? encodeURIComponent : function(a) { return a; };
+    return Object.keys(value).map(function(key) {
+      return key + eq + encode(value[key]);
+    }).join(sep);
+  },
+};
+
+var arraydata = QueryString.parse();
+
+            var pieData = [
+                {
+                    "value": 0,
+                    "color":"#CCCCCC"
+                },
+                {
+                    "value" : 0,
+                    "color" : "#FF0066"
+                },
+                {
+                    "value" : 0,
+                    "color" : "#666666"
+                }
+            ];
+
+
+            pieData[0].value = arraydata.solty
+            pieData[1].value = arraydata.soysource
+            pieData[2].value = arraydata.source
+
+var myPie = new Chart(document.getElementById("pieArea").getContext("2d")).Pie(pieData);
+
+

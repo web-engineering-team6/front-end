@@ -22,11 +22,9 @@ function picsend(){
 
  	   	var body = JSON.parse(this.responseText);
 
- 	   	console.log(body);
-
-		console.log(body[0].attribute_name1);
-		console.log(body[0]);
-
+		url = "result.html?"+body[0].attribute_name1+"="+body[0].attribute1+"&"+body[1].attribute_name2+"="+body[1].attribute2+"&"+body[2].attribute_name3+"="+body[2].attribute3
+		console.log(url);
+    	document.location.href = url;
 
  	 }
 	};
@@ -38,8 +36,6 @@ function picsend(){
 
 	request.send(JSON.stringify(body));
 
-
-    //document.location.href = "result.html";
 	return false;
 };
 
