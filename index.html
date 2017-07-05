@@ -16,68 +16,115 @@
 
 	<body>
 
-
-		<div class="container">
-
-			<div id="title">
-				<h1>顔診断アプリ</h1>
-				<p>人工知能があなたの顔の成分を分析します！</p>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<a class="navbar-brand" href="#">顔診断アプリ</a>
 			</div>
+		
+		</div>
+	</nav>
 
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-xs-12">
+			<div id="title" class="text-center">
+				<h2>顔診断アプリ</h2>
+				<hr>
+				<p><strong>ディープラーニング</strong>で<strong>あなたの顔</strong>の成分を<strong>分析</strong>します！</p>
+			</div>
+			</div>
+			
+		</div>
+
+		<div class="row">
 			<div id="inputform">
 				<form id="send">
-					<label>
-						<p>画像を選択</p>
-						<input type="file">
-					</label>
-					<label>
-						<p>名前を入力（漢字、全角カナ、全角かな、半角英数字を最大8文字まで）</p>					    
-						<input type="text" name="name" maxlength="8" placeholder="名前" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="漢字、全角カナ、全角かな、半角英数字のいずれか８文字を入力して下さい。" />
-         　　　　　　　　　　　　　　　　　　 </label>
-					<button type="submit" value="start" onclick="return picsend();">START</button>
-　　　　　　　　　　　　　　　　　　　</form>
+
+					<div class="col-xs-12 margin-b10">
+						<input id="fullname" type="text" class=form-control name="name" maxlength="8" placeholder="名前を入力（最大8文字）" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="漢字、全角カナ、全角かな、半角英数字のいずれか８文字を入力して下さい。" />
+         			</div>
+
+					<div class="col-xs-12 margin-b10">
+					<div class="input-group">
+    				<label class="input-group-btn">
+        				<span class="btn btn-info">
+            			画像を選択<input type="file" style="display:none">
+        				</span>
+    				</label>
+    				<input type="text" class="form-control" readonly="">
+					</div>
+					</div>
+
+					<div class="col-xs-12">
+					<button type="submit" value="start" onclick="return picsend();" class="btn btn-info btn-lg btn-block active">START</button>
+					</div>
+　　　　　　　　　</form>
+
+
+
+				<div class="col-xs-12">
 				<div id="caution">
-					<p>※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約※利用規約</p>
-					<p>※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー※プライバシーポリシー</p>
+					<p>※利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。</p>
+					<p>※プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。</p>
+				</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="row">
 
 			<div id="review">
-			<h2>あの、有名人も分析！</h2>
-				<div class="row">
-					<div class="col-xs-6">
-						<img src="img/yoshinobu.png" width="150px">
-						<p>徳川 慶喜さん</p>
-					</div>
-					<div class="col-xs-6">
-					<p>グラフがここに入ります</p>
-					</div>
-				</div>
-				<div class="row">
-					<p>"自分の顔が塩顔成分と分かり、スッキリしました！"</p>
-				</div>
-			</div>
 
-			<div id="start">
-				<h2>さあ、あなたも始めよう！</h2>
-				<p id="pageTop"><a href="#">トップへ戻る</a></p>
+				<div class="col-xs-12 text-center">
+				<h2>あの、有名人も分析！</h2>
+				<hr>
+				</div>
+
+				<div class="col-sm-6 text-center">
+					<img src="img/yoshinobu.png" width="300px" height="300px">
+					<p class="pic-disc">▲ 徳川 慶喜さん ▲</p>
+				</div>
+				<div class="col-sm-6 text-center">
+					<img src="img/chart.png" width="300px" height="300px">
+					<p class="pic-disc">▲ 顔成分の分析例 ▲</p>
+				</div>
+
+				<div class="col-xs-12 interview">
+					<blockquote>自分の顔が塩顔成分と分かり、スッキリしました！普段より、お通じの調子が良い気がします。</blockquote>
+				</div>
+
 			</div>
 
 		</div>
 
+		<div class="row">
+
+			<div id="start" class="col-xs-12 text-center">
+				<h2>あなたも始めよう！</h2>
+				<hr>
+				<p>はじめ方は簡単！名前を入力し、<strong>スマホのカメラロールから自分の写真をアップロード</strong>するだけで始めることができます。</p>
+				<p class="btn btn-info btn-lg btn-block active btn-top">トップに戻って始める</p>
+			</div>
+
+		</div>
+
+	</div>
 		<!-- jquery読み込み -->
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
 		<!-- bootstrap読み込み -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+		
 		<!-- chart.js読み込み -->
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 		<!-- js読み込み -->
 		<script src="js/common.js"></script>
 		<script src="js/index.js"></script>
-		
+
 	</body>
 </html>

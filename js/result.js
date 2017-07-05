@@ -60,20 +60,26 @@ var QueryString = {
   },
 };
 
+
+
 var arraydata = QueryString.parse();
 
             var pieData = [
+
                 {
+                    "label" : "しお顔度",
                     "value": 0,
-                    "color":"#CCCCCC"
+                    "color":"#3498db"
                 },
                 {
-                    "value" : 0,
-                    "color" : "#FF0066"
-                },
-                {
+                    "label" : "ソース顔度",
                     "value" : 0,
                     "color" : "#666666"
+                },
+                {
+                    "label" : "しょうゆ顔度",
+                    "value" : 0,
+                    "color" : "#CCCCCC"
                 }
             ];
 
@@ -82,6 +88,15 @@ var arraydata = QueryString.parse();
             pieData[1].value = arraydata.soysource
             pieData[2].value = arraydata.source
 
-var myPie = new Chart(document.getElementById("pieArea").getContext("2d")).Pie(pieData);
+
+　　var ctx = document.getElementById("pieArea").getContext("2d");
+　　var myPie = new Chart(ctx).Pie(pieData, {
+　　　　onAnimationComplete: function(){
+　　　　　　this.showTooltip(this.segments, true);
+　　　　},
+　　　　tooltipEvents: [],
+　　　　showTooltips: true 
+　　});
 
 
+// 参考 http://blog2.gods.holy.jp/?eid=189

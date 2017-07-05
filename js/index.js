@@ -10,19 +10,19 @@ $(function(){
 function picsend(){
 	var request = new XMLHttpRequest();
 
+	var fullname = document.getElementById('fullname').value;
+	var url = "http://google.com/";
+
 	request.open('POST', 'https://private-anon-0b73dcc383-aichangesfaces.apiary-mock.com/v1/faceAnalysis');
 
 	request.setRequestHeader('Content-Type', 'application/json');
 
 	request.onreadystatechange = function () {
 	  if (this.readyState === 4) {
-	    console.log('Status:', this.status);
-	    console.log('Headers:', this.getAllResponseHeaders());
- 	   	console.log('Body:', this.responseText);
 
  	   	var body = JSON.parse(this.responseText);
 
-		url = "result.html?"+body[0].attribute_name1+"="+body[0].attribute1+"&"+body[1].attribute_name2+"="+body[1].attribute2+"&"+body[2].attribute_name3+"="+body[2].attribute3
+		url = "result.html?fullname="+fullname+"&url="+url+"&"+body[0].attribute_name1+"="+body[0].attribute1+"&"+body[1].attribute_name2+"="+body[1].attribute2+"&"+body[2].attribute_name3+"="+body[2].attribute3
 		console.log(url);
     	document.location.href = url;
 
@@ -30,7 +30,7 @@ function picsend(){
 	};
 
 	var body = {
-	    'image_url': '/static/img/000001.png',
+	    'image_url': url,
 	    'analysis_type': 'seasoning'
 	};
 
@@ -40,10 +40,25 @@ function picsend(){
 };
 
 //ページの頭に戻る処理
-$(function(){
-	$('#pageTop').click(function(){
-	$('index,html').animate({
-	scrollTop: 0},500);
-	return false;
-	})
+$(function() {
+  $('.btn-top').click(function() {
+    // スクロール
+    $('html,body').animate({scrollTop: 0}, 500, 'swing');
+  });
 });
+
+
+//画像選択のフォーム作成
+$(document).on('change', ':file', function() {
+    var input = $(this),
+    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.parent().parent().next(':text').val(label);
+});
+
+
+
+
+
+
+// 参考 http://blog2.gods.holy.jp/?eid=189

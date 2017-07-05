@@ -13,3 +13,47 @@ textarea:focus:valid{
     border:solid 1px grey;
     
 }
+
+
+body{
+	padding-top: 70px;
+    color: #555;
+}
+
+.margin-b10{
+	margin-bottom: 10px;
+}
+
+.text-center{
+	text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: #3498db;
+}
+
+hr {
+    position: relative;
+    border: none;
+    display: block;
+    height: 1px;
+    margin-top: 5px;
+}
+
+hr:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 47%;
+    width: 6%;
+    height: 1px;
+    background: #3498db;
+}
+
+
+.pic-disc{
+    font-size: 18px;
+}
+
+

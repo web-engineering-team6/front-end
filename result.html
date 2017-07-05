@@ -13,81 +13,116 @@
 		<link href="css/common.css" rel="stylesheet">
 		<link href="css/result.css" rel="stylesheet">
 	</head>
+
+
 	<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+
+			<a class="navbar-brand" href="#">顔診断アプリ</a>
+			</div>
+		
+		</div>
+	</nav>
+
+
+
 		<div class="container">
 
 			<div id="result">
-				<h1>あなたの顔は...</h1>
-				<div class="row">
-					<div class="col-xs-6">
-						<img src="img/yoshinobu.png" width="150px">
-						<p>徳川 慶喜さん</p>
-					</div>
-					<div class="col-xs-6">
-					<canvas id="pieArea" height="500" width="500"></canvas>
+				<div class="row text-center">
+				<h2>あなたの顔の分析結果</h2>
+				</div>
+				<hr>
 
+				<div class="row">
+					<div class="col-sm-6 text-center">
+						<img src="img/yoshinobu.png" width="300px" height="300px">
+						<p class="pic-disc">徳川 慶喜さん</p>
 					</div>
+					<div class="col-sm-6 text-center">
+						<canvas id="pieArea" width="300px" height="300px"></canvas>
+						<p class="pic-disc">▲ 顔成分の分析例 ▲</p>
+					</div>
+
 				</div>
 			</div>
 
-			<div align="center" id="tweet">
-				<span id="tweet">結果をツイートする</span><br>
+			<div class="row">
+				<div class="col-xs-12 text-center">
 
-				<a href="https://twitter.com/share" class="twitter-share-button"
-				   data-text="塩顔？しょうゆ顔？ソース顔？顔診断サイト！http://test.jp"
-				   data-lang="ja" 
-				   data-size="large" 
-				   data-hashtags="人工知能,顔認識">ツイート</a> 
+				<a href="https://twitter.com/intent/tweet?text=しお顔？しょうゆ顔？ソース顔？顔診断サイト！&url=http://test.jp&hashtags=ディープラーニング" rel=”nofollow” onClick="window.open(encodeURI(decodeURI(this.href)),'twwindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1'); return false;" class="btn btn-info btn-lg btn-block active btn-top">結果をツイートする</a>
 
+				</div>
 			</div>
 			
-			<div align="center" id="try-again">
-				<a href="index.html">もう一回やってみる</a>
+			<div class="row tryagain">
+				<div class="col-xs-12 text-center">
+
+				<a href="index.html" class="btn btn-success btn-lg btn-block active btn-top">もう一回やってみる</a>
+
+				</div>
 			</div>
 
-			<div align="left" id="ad">
-				<h2>あなたにとって理想な顔は...?</h2>
-				<p>人工知能技術と美容整形病院のコラボで<br>理想な顔になっていただけます！</p>
 
-        
-				<p class="caption">下記の項目を入力して「美容整形カウンセリング」ボタンをクリックしてください。<br>送信後に美容整形病院より改めてご連絡させていただきます。</p>
+
+			<div align="left" id="ad">
+				<div class="text-center">
+					<h2>あなたにとって理想な顔は...?</h2>
+					<hr>
+				</div>
+				<p>人工知能技術と美容整形病院のコラボで理想な顔になっていただけます！</p>
+				<p>下記の項目を入力して「美容整形カウンセリング」ボタンをクリックしてください。送信後に美容整形病院より改めてご連絡させていただきます。</p>
+
 
 				<form id="ad-face">
-					<label>
-						<p>お名前</p>
-						<input id="name" type="text" name="name" maxlength="8" placeholder="塩顔　太郎" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="お名前を漢字、全角カナ、全角かなで入力して下さい。" />
-					</label><br>
-                                                            
-					<label>
-						<p>ふりがな</p>
-						<input id="furigana" type="text" name="name" maxlength="8" placeholder="しおがお　たろう" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="お名前を全角ひらがなで入力して下さい。"/>
-					</label><br>
+					<div class="form-group">
+						<label>お名前</label>
+						<input id="name" type="text" name="name" maxlength="8" placeholder="塩顔　太郎" class="form-control" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="お名前を漢字、全角カナ、全角かなで入力して下さい。" />
+					</div>
+                                 
+					<div class="form-group">
+						<label>ふりがな</label>
+						<input id="furigana" type="text" name="name" maxlength="8" placeholder="しおがお　たろう" class="form-control" pattern="^[\u4E00-\u9FFF\u30A1-\u30F6\u3041-\u3096a-zA-Z0-9]{1,}$" title="お名前を全角ひらがなで入力して下さい。"/>
+					</div>
 
-					<label>
-						<p>性別</p>
+					<div class="form-group">
+						<label>性別</label><br>
+						<div class="radio-inline">
 						<input type="radio" name="sex" value="male">
-						男
+						<b>男</b>
+						</div>
+						<div class="radio-inline">
 						<input type="radio" name="sex" value="female">
-						女<br>
-					</label><br>
+						<b>女</b>
+						</div>
+					</div>
 
-					<label>
-						<p>携帯番号</p>
-						<input id="tel" type="tel" name="tel" placeholder="xxx-xxxx-xxxx" pattern="^([0-9]{3}-[0-9]{4}-[0-9]{4})$" maxlength="13" title="携帯番号をハイフンで区切って入力してください">
-					</label><br>
 
-					<label>
-						<p>メールアドレス</p>
-						<input id="mail" type="email" name="email" pattern="^([a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,})$" placeholder="xxxxxx@xxx.com">
-					</label><br>
+					<div class="form-group">
+						<label>携帯番号</label>
+						<input id="tel" type="tel" name="tel" class="form-control" placeholder="xxx-xxxx-xxxx" pattern="^([0-9]{3}-[0-9]{4}-[0-9]{4})$" maxlength="13" title="携帯番号をハイフンで区切って入力してください">
+					</div>
 
-					<label>
-						<p>相談内容</p>
-						<input id="text" type="text" name="text" size="23" style="height:50px">
-					</label><br>
+					
+					<div class="form-group">
+						<label>メールアドレス</label>
+						<input id="mail" type="email" name="email" class="form-control" pattern="^([a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,})$" placeholder="xxxxxx@xxx.com">
+					</div>
 
-					<a href="#" class="slack-submit">整形カウンセリングを申し込む</a>
+					
+					<div class="form-group">
+						<label>相談内容</label>
+						<input id="text" type="text" name="text" class="form-control" size="23" style="height:50px">
+					</div>
+
+					<a href="#" class="slack-submit btn btn-info btn-lg btn-block active btn-top margin-b10">整形カウンセリングを申し込む</a>
 				</form>
+			</div>
+
+			</div>
 			</div>
 
 		</div>
