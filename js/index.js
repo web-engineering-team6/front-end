@@ -1,19 +1,66 @@
 /* index.htmlのjsはココ */
 
-//画像切り取りAPI
-$(function(){
-	//画像データをAPIに送信する処理を書きます
-	// http://black-flag.net/jquery/20150217-5587.html このへんを参考に実装すれば良さそう
+//設定
+
+test_environment = 'https://private-anon-0b73dcc383-aichangesfaces.apiary-mock.com/v1/faceAnalysis'
+real_environment = 'http://127.0.0.1:5000/v1/faceAnalysis'
+apiurl = real_environment
+
+
+
+// 画像のアップロード
+$('#file').change(function (e){
+
+    var img = new Image();
+    var reader = new FileReader();
+    var file = this.files[0];
+    var datasize = this.files[0].size;
+    
+    if (!file.type.match(/^image\/(bmp|png|jpeg|gif)$/)){
+        alert("対応画像ファイル[bmp|png|jpeg|gif]");
+        return;
+    }
+    
+    reader.onload = function(event){
+        img.onload = function(){
+            var data = {data:img.src.split(',')[1]};
+            console.log(data);
+            console.log(datasize);
+
+            function post_pic(){
+            var result = $.ajax({
+                type: 'POST',
+                url: '../pic.php',
+                data: data,
+                async: false
+            }).responseText;
+            return result;
+            }
+
+            url = post_pic()
+            console.log(url)
+
+
+        };
+        img.src = event.target.result;
+
+    };
+    
+    reader.readAsDataURL(file);
+
 });
 
-//データ送信API
-function picsend(){
+// データ送信API
+$('#start').click(function(){
+    //alert(this.id);
+
+
 	var request = new XMLHttpRequest();
 
 	var fullname = document.getElementById('fullname').value;
-	var url = "http://google.com/";
 
-	request.open('POST', 'https://private-anon-0b73dcc383-aichangesfaces.apiary-mock.com/v1/faceAnalysis');
+
+	request.open('POST', apiurl);
 
 	request.setRequestHeader('Content-Type', 'application/json');
 
@@ -37,7 +84,8 @@ function picsend(){
 	request.send(JSON.stringify(body));
 
 	return false;
-};
+
+});
 
 //ページの頭に戻る処理
 $(function() {
@@ -55,10 +103,5 @@ $(document).on('change', ':file', function() {
     label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
     input.parent().parent().next(':text').val(label);
 });
-
-
-
-
-
 
 // 参考 http://blog2.gods.holy.jp/?eid=189

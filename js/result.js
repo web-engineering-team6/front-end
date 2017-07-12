@@ -46,7 +46,7 @@ var QueryString = {
     var decode = (isDecode) ? decodeURIComponent : function(a) { return a; };
     return text.split(sep).reduce(function(obj, v) {
       var pair = v.split(eq);
-      obj[pair[0]] = Number(decode(pair[1]));
+      obj[pair[0]] = decode(pair[1]);
       return obj;
     }, {});
   },
@@ -63,6 +63,8 @@ var QueryString = {
 
 
 var arraydata = QueryString.parse();
+
+console.log(arraydata)
 
             var pieData = [
 
@@ -97,6 +99,15 @@ var arraydata = QueryString.parse();
 　　　　tooltipEvents: [],
 　　　　showTooltips: true 
 　　});
+
+    var name = arraydata.fullname
+    console.log(name)
+    $("#yourname").text(name);
+
+    var url = arraydata.url
+    console.log(url)
+    $("#yourface").attr("src",url);
+
 
 
 // 参考 http://blog2.gods.holy.jp/?eid=189
