@@ -16,8 +16,8 @@ $('#file').change(function (e){
     var file = this.files[0];
     var datasize = this.files[0].size;
     
-    if (!file.type.match(/^image\/(bmp|png|jpeg|gif)$/)){
-        alert("対応画像ファイル[bmp|png|jpeg|gif]");
+    if (!file.type.match(/^image\/(png|jpeg)$/)){
+        alert("対応画像ファイル[png|jpeg]");
         return;
     }
     
