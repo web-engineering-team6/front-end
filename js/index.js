@@ -3,7 +3,7 @@
 //設定
 test_environment = 'https://private-anon-0b73dcc383-aichangesfaces.apiary-mock.com/v1/faceAnalysis'
 real_environment = 'https://blooming-caverns-18971.herokuapp.com/v1/faceAnalysis'
-apiurl = test_environment
+apiurl = real_environment
 
 // 変数定義
 var image_url

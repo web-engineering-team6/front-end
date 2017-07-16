@@ -3,7 +3,7 @@
 
 //ツイートBOX
 var href = encodeURIComponent(window.location.href);
-document.getElementById("tweet-box").innerHTML = "<a href='https://twitter.com/intent/tweet?text=しお顔？しょうゆ顔？ソース顔？顔診断サイト！私の分析結果はこちら->&url="+href+"&hashtags=DeepFace' rel='nofollow' onClick='window.open(encodeURI(decodeURI(this.href)),'twwindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1'); return false;' class='btn btn-info btn-lg btn-block active btn-top'>結果をツイートする</a>";
+document.getElementById("tweet-box").innerHTML = "<a href='https://twitter.com/intent/tweet?text=しお顔？しょうゆ顔？ソース顔？人工知能による顔診断のDeepFace。私の分析結果はこちら->&url="+href+"&hashtags=DeepFace' rel='nofollow' onClick='window.open(encodeURI(decodeURI(this.href)),'twwindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1'); return false;' class='btn btn-info btn-lg btn-block active btn-top'>結果をツイートする</a>";
 
 //ツイート送信
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
