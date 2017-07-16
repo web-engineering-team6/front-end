@@ -2,7 +2,9 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<title>塩顔？しょうゆ顔？ソース顔？顔診断サイト！</title>
+		<meta name="viewport" content="width=device-width">
+
+		<title>塩顔？しょうゆ顔？ソース顔？人工知能による顔診断のDeepFace</title>
 
 		<!-- CSSテンプレート読み込み -->
 		<link href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
@@ -16,14 +18,21 @@
 
 	<body>
 
+	<!-- ローディング表示 -->
+	<div class="loading is-hide">
+		<div class="loading_icon">
+		</div>
+	</div>
+	
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-			<a class="navbar-brand" href="#">顔診断アプリ</a>
+			<a class="navbar-brand" href="index.html">顔診断アプリ</a>
 			</div>
 		
 		</div>
 	</nav>
+
 
 	<div class="container">
 
@@ -51,7 +60,7 @@
 					<div class="input-group">
     				<label class="input-group-btn">
         				<span class="btn btn-info">
-            			画像を選択<input type="file" id="file" style="display:none">
+            			画像を選択<input type="file" id="file" class="loadingcss" style="display:none">
         				</span>
     				</label>
     				<input type="text" class="form-control" readonly="">
@@ -64,12 +73,9 @@
 
 　　　　　　　　　</form>
 
-
-
 				<div class="col-xs-12">
 				<div id="caution">
-					<p>※利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。利用規約はここに入ります。</p>
-					<p>※プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。プライバシーポリシーはここに入ります。</p>
+					<p>※当サービスは、最新のDeep Learning技術を用いてあなたの顔診断を行っていますが、結果に責任を負うものではありません。<br>※当診断で使用された写真は当社・当サービス外に流出することはありませんので、ご安心してお楽しみください。ただし、当社パートナーの芸能プロダクション及び接客業者が望む顔の組成をあなたがお持ちの場合、当社からあなたにスカウトメールをお送りさせていただく場合がございます。<br>※ご使用の環境によっては動作しない場合がございます。ご了承ください。（推奨環境:iPhone ios 9以上、Android 4.1以上) </p>
 				</div>
 				</div>
 			</div>
@@ -124,6 +130,7 @@
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 		<!-- js読み込み -->
+		<script src="js/token.js"></script>
 		<script src="js/common.js"></script>
 		<script src="js/index.js"></script>
 

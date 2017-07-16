@@ -2,7 +2,9 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<title>塩顔？しょうゆ顔？ソース顔？顔診断サイト！</title>
+		<meta name="viewport" content="width=device-width">
+
+		<title>塩顔？しょうゆ顔？ソース顔？人工知能による顔診断のDeepFace</title>
 
 		<!-- CSSテンプレート読み込み -->
 		<link href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
@@ -17,6 +19,7 @@
 
 	<body>
 
+	
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -26,6 +29,7 @@
 		
 		</div>
 	</nav>
+	
 
 
 
@@ -38,22 +42,22 @@
 				<hr>
 
 				<div class="row">
-					<div class="col-sm-6 text-center">
+					<div class="col-sm-4 col-sm-offset-2 text-center">
 						<img id="yourface" src="img/loading.gif" width="300px" height="300px">
 						<p class="pic-disc"><span id="yourname"></span>さん</p>
 					</div>
-					<div class="col-sm-6 text-center">
+					<div class="col-sm-4 text-center">
 						<canvas id="pieArea" width="300px" height="300px"></canvas>
-						<p class="pic-disc">▲ 顔成分の分析例 ▲</p>
+						<p class="pic-disc">▲ 分析結果 ▲</p>
 					</div>
 
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 text-center">
+				<div class="col-xs-12 text-center" id="tweet-box">
 
-				<a href="https://twitter.com/intent/tweet?text=しお顔？しょうゆ顔？ソース顔？顔診断サイト！&url=https://pecori-faceapp.ssl-lolipop.jp/&hashtags=ディープラーニング" rel=”nofollow” onClick="window.open(encodeURI(decodeURI(this.href)),'twwindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1'); return false;" class="btn btn-info btn-lg btn-block active btn-top">結果をツイートする</a>
+
 
 				</div>
 			</div>
@@ -70,11 +74,11 @@
 
 			<div align="left" id="ad">
 				<div class="text-center">
-					<h2>あなたにとって理想な顔は...?</h2>
+					<h2>スカウトを受け取りませんか？</h2>
 					<hr>
 				</div>
-				<p>人工知能技術と美容整形病院のコラボで理想な顔になっていただけます！</p>
-				<p>下記の項目を入力して「美容整形カウンセリング」ボタンをクリックしてください。送信後に美容整形病院より改めてご連絡させていただきます。</p>
+				<p>当社パートナーの芸能プロダクション及び接客業者が望む顔の組成をあなたがお持ちの場合、当社からあなたにスカウトメールをお送りさせていただく場合がございます。</p>
+				<p>もしスカウトの受信を希望される場合、以下の内容をお送りくださいませ！</p>
 
 
 				<form id="ad-face">
@@ -114,11 +118,11 @@
 
 					
 					<div class="form-group">
-						<label>相談内容</label>
+						<label>その他</label>
 						<input id="text" type="text" name="text" class="form-control" size="23" style="height:50px">
 					</div>
 
-					<a href="#" class="slack-submit btn btn-info btn-lg btn-block active btn-top margin-b10">整形カウンセリングを申し込む</a>
+					<a href="#" class="slack-submit btn btn-info btn-lg btn-block active btn-top margin-b10">スカウト登録する</a>
 				</form>
 			</div>
 
@@ -141,6 +145,5 @@
 		<script src="js/token.js"></script>
 		<script src="js/common.js"></script>
 		<script src="js/result.js"></script>
-
 	</body>
 </html>

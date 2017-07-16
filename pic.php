@@ -18,7 +18,7 @@ $fp = fopen($imageName, "w");
 fwrite($fp, base64_decode($data));
 fclose($fp);
 
-$picurl = "https://pecori-faceapp.ssl-lolipop.jp/".$imageName;
+$picurl = "http://deep-face.tokyo/".$imageName;
 
 // ChromePhp::log($picurl);
 

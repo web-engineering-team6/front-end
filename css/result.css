@@ -8,3 +8,7 @@
 	margin-top: 45px;
 
 }
+
+#yourface{
+	object-fit: contain;
+}
