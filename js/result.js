@@ -85,7 +85,7 @@ console.log(arraydata)
     console.log(name)
     $("#yourname").text(name);
 
-    var url = arraydata.url
+    url = arraydata.url //グローバル変数に画像URLを付与
     console.log(url)
     $("#yourface").attr("src",url);
 
@@ -100,7 +100,7 @@ console.log(arraydata)
 // 申込FormのtextBoxへの記入がConfirmされたものをSlackへPost
 $(function () {
     $('.slack-submit').on('click', function () {
-    var url = 'https://slack.com/api/chat.postMessage';
+    var slackurl = 'https://slack.com/api/chat.postMessage';
     var name = $("#name").val()
     var furigana = $("#furigana").val()
     var sex = $("[name=sex]:checked").val()
@@ -118,12 +118,12 @@ $(function () {
             username: 'yoshinobu-nisei-bot',
             as_user: 'false',
             icon_url: 'http://lorempixel.com/48/48',
-            text: 'Name: '+name+'\n'+'furigana: '+furigana+'\n'+'sex: '+sex+'\n'+'tel: '+tel+'\n'+'mail: '+mail+'\n'+'text: '+text
+            text: 'Pic: '+url+'\n'+'Name: '+name+'\n'+'furigana: '+furigana+'\n'+'sex: '+sex+'\n'+'tel: '+tel+'\n'+'mail: '+mail+'\n'+'text: '+text
         };
 
         $.ajax({
             type: 'GET',
-            url: url,
+            url: slackurl,
             data: data,
             success: function(){
                 alert("申し込み完了しました。スカウトされた場合、ご指定の電話番号・メールアドレスにご案内差し上げます！");
